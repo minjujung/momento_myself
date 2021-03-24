@@ -12,7 +12,11 @@ const USER = "userName";
 
 function handleSubmit(event) {
     event.preventDefault();
-    const name = nameInput.value;
+    let name = nameInput.value;
+    if(name === "") {
+        //when user dont write anything
+        name = "stranger";
+    }
     saveName(name);
     paintingName(name);
 }
